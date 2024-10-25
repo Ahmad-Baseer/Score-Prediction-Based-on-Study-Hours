@@ -9,6 +9,8 @@ app_file: app.py
 pinned: false
 ---
 
+Status Badge: [![Sync to Hugging Face hub](https://github.com/Ahmad-Baseer/Score-Prediction-Based-on-Study-Hours/actions/workflows/main.yml/badge.svg)](https://github.com/Ahmad-Baseer/Score-Prediction-Based-on-Study-Hours/actions/workflows/main.yml/)
+
 # How to run the application
 
 1. Assuming you have Python installed in your system, after that first you have to run this command: ```pip install -r requirements.txt``` in cmd to install the required libraries.
