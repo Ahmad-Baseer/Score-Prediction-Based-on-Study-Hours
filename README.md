@@ -18,7 +18,7 @@ Status Badge: [![Sync to Hugging Face hub](https://github.com/Ahmad-Baseer/Score
 3. After having ```model.sav``` you can run ```Web_App.py```, it will create app.py in your working directory.
 4. That's all you should have now you have to open cmd in your working directory and run this command: ```streamlit run app.py```, it will run your application locally.
 5. Now you can follow any YouTube video to deploy this application.
-6. You can use my application here: [Student-Score-Prediction](https://huggingface.co/spaces/AhmadHashim/Student-Score-Prediction) 
+6. You can use my application here: [Student-Score-Prediction](https://huggingface.co/spaces/AhmadHashim/Score-Prediction-Based-on-Study-Hours)
 
 # Complete working of this application
 ## Data Preprocessing
