@@ -1,0 +1,37 @@
+name: Sync specific files to Hugging Face hub
+on:
+  push:
+    branches: [main]
+    paths:
+      - model.sav
+      - app.py
+      - requirements.txt
+  workflow_dispatch:
+
+jobs:
+  sync-to-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Hugging Face CLI
+        run: |
+          pip install -U "huggingface_hub[cli]"
+
+      - name: Login to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          huggingface-cli login --token $HF_TOKEN
+
+      - name: Upload specific files to Hugging Face
+        run: |
+          huggingface-cli upload AhmadHashim/Score-Prediction-Based-on-Study-Hours ./app.py --repo-type=space --commit-message="Sync local Space with Hub"
+          huggingface-cli upload AhmadHashim/Score-Prediction-Based-on-Study-Hours ./model.sav --repo-type=space --commit-message="Sync local Space with Hub"
+          huggingface-cli upload AhmadHashim/Score-Prediction-Based-on-Study-Hours ./requirements.txt --repo-type=space --commit-message="Sync local Space with Hub"
